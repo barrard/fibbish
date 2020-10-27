@@ -6,8 +6,9 @@ BigInt.prototype.toJSON = function() { return this.toString(); };
 app.get("/fibbish/:n", (req, res) => {
   let fibVals = [0, 1];
   let {ip} = req
+  let d = new Date().toLocaleString()
   let n  = parseFloat(req.params.n);
-  console.log({n, ip})
+  console.log({n, ip, d})
   if(!number_test(n)){
     return res.json({ fibVals: "Please send a whole number" });
   }
