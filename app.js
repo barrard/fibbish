@@ -8,6 +8,7 @@ app.get("/fibbish/:n", (req, res) => {
   let {ip} = req
   let d = new Date().toLocaleString()
   let n  = parseFloat(req.params.n);
+  console.log(req.headers)
   console.log({n, ip, d})
   if(!number_test(n)){
     return res.json({ fibVals: "Please send a whole number" });
